@@ -67,23 +67,6 @@ f = fun x : nat => x + 3
 Print x.
 ```
 
-It should apply to tactics in proof mode as well:
-
-```coq
-Goal False.
-  With Output "
-   (* debug trivial: *)
-    * assumption. (*fail*)
-    * intro. (*fail*)
-  "
-  debug trivial.
-
-  With Output "
-    The command has indeed failed with message:
-    The type has no constructors.
-  "
-  Fail constructor.
-```
 
 In the first iteration, the contents of the string literal must perfectly match
 the command output modulo duplicated whitespaces.
