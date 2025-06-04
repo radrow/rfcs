@@ -119,7 +119,7 @@ Check f : nat -> nat.
 - `Print` can be hacked modulo conversions with
 
 ```coq
-Check eq_refl f = fun x => x + 3.
+Check eq_refl : f = fun x => x + 3.
 ```
 
 but it does not let you test notations.
