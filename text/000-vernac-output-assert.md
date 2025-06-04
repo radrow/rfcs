@@ -7,10 +7,9 @@
 # Summary
 
 I would like to see and test outputs of vernacular commands without necessarily
-going into interactive. More concretely, I propose to add a feature that lets me
-paste the desired output of a particular command into Rocq code and make Rocq
-verify whether it matches. The concept is similar to the existing `Fail`
-command.
+going into interactive. More concretely, I propose a feature that lets me paste
+the desired output of a particular command into Rocq code and make Rocq verify
+whether it matches. The concept is similar to the existing `Fail` command.
 
 This is by the way a
 [feature](https://florisvandoorn.com/carleson/docs/Lean/Elab/GuardMsgs.html) in
