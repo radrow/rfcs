@@ -67,25 +67,40 @@ f = fun x : nat => x + 3
 Print x.
 ```
 
-
 In the first iteration, the contents of the string literal must perfectly match
 the command output modulo duplicated whitespaces.
+
+### Errors
+
+This should produce a warning by default. Otherwise it may create unwanted
+dependencies to Rocq version. I propose something as simple as:
+
+```
+Outputs do not match.
+
+Expected
+"blah"
+
+Got
+"hlab"
+```
+
+Newlines after "Expected" and "Got" will help finding differences.
 
 ### Possible improvements
 
 Just ideas. To be discussed in more detail after this RFC is concluded.
 
 1. Allow regexes.
-2. Flag to turn this off — both in code and as a CLI parameter.
+2. Integrate with `Diff`.
 3. We can deduct how to parse output of some commands and allow more
    flexibility. For example, we could accept some minor term conversions in
    cases of `Check` and `Print`.
 
 # Drawbacks
 
-- Another restricted keyword (`With`).
-- Might increase dependency on particular Rocq versions if misused. A flag to
-  turn it off should solve some problems.
+- <s>Another restricted keyword (`With`).</s> <sub>Doesn't need to be restricted, e.g. `Fail` is not.</sub>
+- Might increase dependency on particular Rocq versions if misused.
 
 # Alternatives
 
